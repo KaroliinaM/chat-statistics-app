@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import StatsBoxContainer from './container/StatsBoxContainer'
 
-function App() {
+
+const App = () => {
+  const url = "https://api.giosg.com/api/reporting/v1/rooms/84e0fefa-5675-11e7-a349-00163efdd8db/chat-stats/daily/?start_date=2017-05-01&end_date=2017-05-10"
+  const headers = {
+    method: 'GET',
+    headers: {
+      'Accept': "application/json",
+      Authorization: "Token 38ab33b9f32a3478555d1e06189d50f01a872966"
+    }
+  }
+  fetch(url, headers).then(response=>response.json()).then(data=>console.log(data))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello World!
+      <StatsBoxContainer />
     </div>
-  );
+  )
 }
 
 export default App;
