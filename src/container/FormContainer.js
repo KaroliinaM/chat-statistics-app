@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../component/Form'
+import Form from '../component/Arguments'
 
 const FormContainer = ({startDate, setStartDate, endDate, setEndDate, token, setToken}) => {
     return (

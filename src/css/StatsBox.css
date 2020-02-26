@@ -21,3 +21,10 @@
     border:solid;
     padding:10px;
 }
+.form-container {
+    display: flex;
+    flex-direction:column;
+}
+.test {
+    align-items:right;
+}

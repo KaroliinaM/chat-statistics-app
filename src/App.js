@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import StatsBoxContainer from './container/StatsBoxContainer'
-import FormContainer from './container/FormContainer'
+import Arguments from './container/FormContainer'
 import DailyStats from './container/DailyStats'
+import {Container} from 'semantic-ui-react'
 
 
 const App = () => {
@@ -26,9 +27,9 @@ const App = () => {
   }, [token])
 
   return (
-    <div>
+    <Container>
       Hello World!
-      <FormContainer 
+      <Arguments
         startDate={startDate} 
         setStartDate={(e)=>setStartDate(e.target.value)} 
         endDate={endDate} 
@@ -38,7 +39,7 @@ const App = () => {
       />
       <StatsBoxContainer stats={stats} />
       <DailyStats stats={stats} />
-    </div>
+    </Container>
   )
 }
 
