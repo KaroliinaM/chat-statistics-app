@@ -4,7 +4,7 @@ import '../css/StatsBox.css'
 
 const Arguments = ({startDate, setStartDate, endDate, setEndDate, token, setToken}) => (
     <div>
-        <Grid columns={2} verticalAlign="middle">
+        <Grid stackable columns={2} verticalAlign="middle">
         <Grid.Row>
             <Grid.Column>
         <Form>
