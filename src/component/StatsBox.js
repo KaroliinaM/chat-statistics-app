@@ -7,8 +7,8 @@ const StatsBox = (props) => {
     console.log(num, stats)
     return (
         <Card className='box-layout'>
-            <div className="box-stat-number">{num}</div>
-            <div className="box-stat-definition">{stats}</div>
+            <div id="statNumber" className="box-stat-number">{num}</div>
+            <div id="statDefinition" className="box-stat-definition">{stats}</div>
         </Card>
     )
 }
