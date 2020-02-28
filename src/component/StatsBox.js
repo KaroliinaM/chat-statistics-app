@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
 import '../css/StatsBox.css'
+import PropTypes from 'prop-types'
 
 const StatsBox = (props) => {
   const { num, stats } = props
@@ -11,6 +12,11 @@ const StatsBox = (props) => {
       <div id="statDefinition" className="box-stat-definition">{stats}</div>
     </Card>
   )
+}
+
+StatsBox.propTypes = {
+  num: PropTypes.number,
+  stats: PropTypes.string
 }
 
 export default StatsBox

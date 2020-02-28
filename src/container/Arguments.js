@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, Input, Grid } from 'semantic-ui-react'
 import '../css/StatsBox.css'
+import PropTypes from 'prop-types'
 
 const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setToken }) => (
   <div>
@@ -38,5 +39,14 @@ const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setTok
     </Grid>
   </div>
 )
+
+Arguments.propTypes = {
+  startDate: PropTypes.string,
+  setStartDate: PropTypes.func,
+  endDate: PropTypes.string,
+  setEndDate: PropTypes.func,
+  token: PropTypes.string,
+  setToken: PropTypes.func
+}
 
 export default Arguments

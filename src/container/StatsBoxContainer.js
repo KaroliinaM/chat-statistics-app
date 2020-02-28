@@ -1,8 +1,9 @@
 import React from 'react'
 import StatsBox from '../component/StatsBox'
+import PropTypes from 'prop-types'
 
 const StatsBoxContainer = (props) => {
-  const {stats } = props
+  const { stats } = props
   return (
     <div className="container-layout">
       <StatsBox num={stats.total_conversation_count} stats="Total conversation count" />
@@ -11,4 +12,9 @@ const StatsBoxContainer = (props) => {
     </div>
   )
 }
+
+StatsBoxContainer.propTypes = {
+  stats: PropTypes.object
+}
+
 export default StatsBoxContainer
