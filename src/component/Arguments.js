@@ -2,38 +2,41 @@ import React from 'react'
 import { Form, Input, Grid } from 'semantic-ui-react'
 import '../css/StatsBox.css'
 
-const Arguments = ({startDate, setStartDate, endDate, setEndDate, token, setToken}) => (
-    <div>
-        <Grid stackable columns={2} verticalAlign="middle">
-        <Grid.Row>
-            <Grid.Column>
-        <Form>
+const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setToken }) => (
+  <div>
+    <Grid stackable columns={2} verticalAlign="middle">
+      <Grid.Row>
+        <Grid.Column>
+          <Form>
             <Form.Group widhts='equal'>
-                <Form.Input 
+              <Form.Input
+                id='inputFrom'
                 label="startDate"
                 value={startDate}
-                onChange={setStartDate} 
-                />
-                <Form.Input
+                onChange={setStartDate}
+              />
+              <Form.Input
+                id='inputTo'
                 label="EndDate"
                 name="EndDate"
                 value={endDate}
                 onChange={setEndDate}
-                />
+              />
             </Form.Group>
-        </Form>
+          </Form>
         </Grid.Column>
         <Grid.Column textAlign="right">
-        <Input size="small" className="test"
+          <Input size="small" className="test"
+            id='inputToken'
             label="Token"
             name="token"
             value={token}
             onChange={setToken}
-        />
+          />
         </Grid.Column>
-        </Grid.Row>
-        </Grid>
-    </div>
+      </Grid.Row>
+    </Grid>
+  </div>
 )
 
 export default Arguments
