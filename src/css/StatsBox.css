@@ -27,3 +27,6 @@
 .test {
     align-items:right;
 }
+.muted-text {
+    opacity: 0.5;
+}

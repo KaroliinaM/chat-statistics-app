@@ -15,9 +15,13 @@ const DailyStats = ({ stats }) => {
     }
 
     const formatDate = (date) => {
-      const formattedDate = new Date(date)
-      const options = { day: 'numeric', month: 'long' }
-      return formattedDate.toLocaleDateString('en-US', options)
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      const dateObj = new Date(date)
+      return (
+        <>
+          {`${dateObj.getUTCDate()} ${months[dateObj.getUTCMonth()]}`}<span className='muted-text'>({dateObj.getFullYear()})</span>
+        </>
+      )
     }
 
     return (
