@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Input, Grid } from 'semantic-ui-react'
-import '../css/StatsBox.css'
 import PropTypes from 'prop-types'
 
 const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setToken }) => (
@@ -12,14 +11,14 @@ const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setTok
             <Form.Group widhts='equal'>
               <Form.Input
                 id='inputFrom'
-                label="startDate"
+                label="Start date"
                 value={startDate}
                 onChange={setStartDate}
               />
               <Form.Input
                 id='inputTo'
-                label="EndDate"
-                name="EndDate"
+                label="End date"
+                name="endDate"
                 value={endDate}
                 onChange={setEndDate}
               />
@@ -27,7 +26,7 @@ const Arguments = ({ startDate, setStartDate, endDate, setEndDate, token, setTok
           </Form>
         </Grid.Column>
         <Grid.Column textAlign="right">
-          <Input size="small" className="test"
+          <Input size="small" className="input-style"
             id='inputToken'
             label="Token"
             name="token"

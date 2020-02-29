@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
-import '../css/StatsBox.css'
 import PropTypes from 'prop-types'
 
 const StatsBox = (props) => {

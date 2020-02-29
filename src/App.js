@@ -4,6 +4,7 @@ import Arguments from './container/Arguments'
 import DailyStats from './container/DailyStats'
 import { Container } from 'semantic-ui-react'
 import statsData from './service/StatisticData'
+import './css/Styles.css'
 
 const App = () => {
   const [startDate, setStartDate] = useState('')
@@ -11,11 +12,17 @@ const App = () => {
   const [token, setToken] = useState('')
   const [stats, setStats] = useState({})
 
+  const INSERT_ARGUMENTS = 'Please insert start date, end date and your token'
+
   useEffect(() => {
-    statsData.get(token).then(data => {
-      setStats(data)
-    })
-  }, [token])
+    if(startDate.length>0 && endDate.length>0 && token.length>0) {
+
+    
+      statsData.get(token, startDate, endDate).then(data => {
+        setStats(data)
+      }).catch(e => console.log(e))
+    }
+  }, [token, startDate, endDate])
 
   return (
     <Container>
@@ -32,7 +39,7 @@ const App = () => {
           <StatsBoxContainer stats={stats} />
           <DailyStats stats={stats} />
         </>)
-        : <>Please insert start date, end date and your token</>
+        : <>{INSERT_ARGUMENTS}</>
       }
     </Container>
   )
