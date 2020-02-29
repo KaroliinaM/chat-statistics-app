@@ -12,15 +12,22 @@ const App = () => {
   const [token, setToken] = useState('')
   const [stats, setStats] = useState({})
 
-  const INSERT_ARGUMENTS = 'Please insert start date, end date and your token'
+  const INSERT_ARGUMENTS = 'Please insert valid arguments for start date, end date and your token'
 
   useEffect(() => {
-    if(startDate.length>0 && endDate.length>0 && token.length>0) {
-
-    
+    if (startDate.length > 0 && endDate.length > 0 && token.length > 0) {
       statsData.get(token, startDate, endDate).then(data => {
         setStats(data)
+        window.localStorage.setItem('specs', JSON.stringify({ start: startDate, end: endDate, token: token }))
       }).catch(e => console.log(e))
+    } else {
+      const localData = window.localStorage.getItem('specs')
+      if (localData) {
+        const specs = JSON.parse(localData)
+        setStartDate(specs.start)
+        setEndDate(specs.end)
+        setToken(specs.token)
+      }
     }
   }, [token, startDate, endDate])
 

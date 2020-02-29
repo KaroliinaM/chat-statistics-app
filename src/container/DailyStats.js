@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 const DailyStats = ({ stats }) => {
   const [page, setPage] = useState(1)
-  console.log('daily', stats)
 
   if (stats.by_date) {
     const itemsOnPage = 5
@@ -28,7 +27,6 @@ const DailyStats = ({ stats }) => {
       <Table>
         <Table.Header>
           <Table.Row>
-            {console.log('pages', activePages())}
             <Table.HeaderCell>
                             conversation_count
             </Table.HeaderCell>
