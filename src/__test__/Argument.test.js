@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react'
 import { mount } from 'enzyme'
-import Arguments from '../component/Arguments'
+import Arguments from '../container/Arguments'
 
 const mockHandler = () => {}
 
